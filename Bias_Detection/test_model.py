@@ -1,6 +1,7 @@
 import pandas as pd
 import joblib
 import numpy as np
+import json
 
 def prepare_input(data_dict):
     """
@@ -47,76 +48,15 @@ def compare_applications(app1, app2):
     print(f"Application 1: {pred1} (Probability: {prob1[1]:.2f})")
     print(f"Application 2: {pred2} (Probability: {prob2[1]:.2f})")
 
-if __name__ == "__main__":
+def load_test_cases(file_path):
+    """Load test cases from a JSON file"""
+    with open(file_path, 'r') as file:
+        return json.load(file)
 
-    # Test cases with varying profiles
-    applications = [
-        {
-            'education': 'Graduate',
-            'self_employed': 'Yes',
-            'income_annum': 8000000,
-            'loan_amount': 25000000,
-            'loan_term': 15,
-            'cibil_score': 800,
-            'residential_assets_value': 15000000,
-            'commercial_assets_value': 10000000,
-            'luxury_assets_value': 30000000,
-            'bank_asset_value': 12000000,
-            'no_of_dependents': 2
-        },
-        {
-            'education': 'Not Graduate',
-            'self_employed': 'Yes',
-            'income_annum': 9000000,
-            'loan_amount': 28000000,
-            'loan_term': 12,
-            'cibil_score': 850,
-            'residential_assets_value': 18000000,
-            'commercial_assets_value': 12000000,
-            'luxury_assets_value': 35000000,
-            'bank_asset_value': 15000000,
-            'no_of_dependents': 3
-        },
-        {
-            'education': 'Graduate',
-            'self_employed': 'No',
-            'income_annum': 4500000,
-            'loan_amount': 12000000,
-            'loan_term': 10,
-            'cibil_score': 650,
-            'residential_assets_value': 8000000,
-            'commercial_assets_value': 3000000,
-            'luxury_assets_value': 15000000,
-            'bank_asset_value': 6000000,
-            'no_of_dependents': 1
-        },
-        {
-            'education': 'Not Graduate',
-            'self_employed': 'No',
-            'income_annum': 5500000,
-            'loan_amount': 15000000,
-            'loan_term': 8,
-            'cibil_score': 700,
-            'residential_assets_value': 10000000,
-            'commercial_assets_value': 4000000,
-            'luxury_assets_value': 18000000,
-            'bank_asset_value': 7000000,
-            'no_of_dependents': 2
-        },
-        {
-            'education': 'Graduate',
-            'self_employed': 'No',
-            'income_annum': 3500000,
-            'loan_amount': 10000000,
-            'loan_term': 6,
-            'cibil_score': 600,
-            'residential_assets_value': 6000000,
-            'commercial_assets_value': 2000000,
-            'luxury_assets_value': 12000000,
-            'bank_asset_value': 4000000,
-            'no_of_dependents': 0
-        }
-    ]
+if __name__ == "__main__":
+    # Load test cases from a JSON file
+    test_cases_file = 'test_cases.json'
+    applications = load_test_cases(test_cases_file)
 
     print("Testing multiple loan applications:")
     for i, app in enumerate(applications, 1):
