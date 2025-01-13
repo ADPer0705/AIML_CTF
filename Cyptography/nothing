@@ -1,0 +1,96 @@
+
+
+  5           0 RESUME                   0
+
+  6           2 LOAD_CONST               1 (0)
+              4 LOAD_CONST               0 (None)
+              6 IMPORT_NAME              0 (base64)
+              8 STORE_FAST               0 (base64)
+
+  8          10 LOAD_CONST               2 ('TFJHTXtY')
+             12 STORE_FAST               1 (sub1)
+
+  9          14 LOAD_CONST               3 ('S2IzWHkx')
+             16 STORE_FAST               2 (sub2)
+
+ 10          18 LOAD_CONST               4 ('dG1fWm4z')
+             20 STORE_FAST               3 (sub3)
+
+ 11          22 LOAD_CONST               5 ('X1Zlem4w')
+             24 STORE_FAST               4 (sub4)
+
+ 12          26 LOAD_CONST               6 ('dF9JMGoz')
+             28 STORE_FAST               5 (sub5)
+
+ 13          30 LOAD_CONST               7 ('X0l4NGlx')
+             32 STORE_FAST               6 (sub6)
+
+ 14          34 LOAD_CONST               8 ('M2pfT3oh')
+             36 STORE_FAST               7 (sub7)
+
+ 15          38 LOAD_CONST               9 ('fQ==')
+             40 STORE_FAST               8 (sub8)
+
+ 18          42 LOAD_FAST                0 (base64)
+             44 LOAD_ATTR                3 (NULL|self + b64decode)
+             64 LOAD_FAST                1 (sub1)
+             66 CALL                     1
+             74 LOAD_FAST                0 (base64)
+             76 LOAD_ATTR                3 (NULL|self + b64decode)
+             96 LOAD_FAST                2 (sub2)
+             98 CALL                     1
+            106 BINARY_OP                0 (+)
+            110 LOAD_FAST                0 (base64)
+            112 LOAD_ATTR                3 (NULL|self + b64decode)
+            132 LOAD_FAST                3 (sub3)
+            134 CALL                     1
+            142 BINARY_OP                0 (+)
+
+ 19         146 LOAD_FAST                0 (base64)
+            148 LOAD_ATTR                3 (NULL|self + b64decode)
+            168 LOAD_FAST                4 (sub4)
+            170 CALL                     1
+
+ 18         178 BINARY_OP                0 (+)
+
+ 19         182 LOAD_FAST                0 (base64)
+            184 LOAD_ATTR                3 (NULL|self + b64decode)
+            204 LOAD_FAST                5 (sub5)
+            206 CALL                     1
+
+ 18         214 BINARY_OP                0 (+)
+
+ 19         218 LOAD_FAST                0 (base64)
+            220 LOAD_ATTR                3 (NULL|self + b64decode)
+            240 LOAD_FAST                6 (sub6)
+            242 CALL                     1
+
+ 18         250 BINARY_OP                0 (+)
+
+ 20         254 LOAD_FAST                0 (base64)
+            256 LOAD_ATTR                3 (NULL|self + b64decode)
+            276 LOAD_FAST                7 (sub7)
+            278 CALL                     1
+
+ 18         286 BINARY_OP                0 (+)
+
+ 20         290 LOAD_FAST                0 (base64)
+            292 LOAD_ATTR                3 (NULL|self + b64decode)
+            312 LOAD_FAST                8 (sub8)
+            314 CALL                     1
+
+ 18         322 BINARY_OP                0 (+)
+            326 STORE_FAST               9 (decoded_bytes)
+
+ 21         328 LOAD_FAST                9 (decoded_bytes)
+            330 LOAD_ATTR                5 (NULL|self + decode)
+            350 LOAD_CONST              10 ('utf-8')
+            352 CALL                     1
+            360 STORE_FAST              10 (decoded_string)
+
+ 23         362 LOAD_GLOBAL              7 (NULL + print)
+            372 LOAD_CONST              11 ('Decoded string:')
+            374 LOAD_FAST               10 (decoded_string)
+            376 CALL                     2
+            384 POP_TOP
+            386 RETURN_CONST             0 (None)
