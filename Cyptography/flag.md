@@ -1,1 +1,0 @@
-FLAG{REv3Rs1ng_Th3_Pyth0n_C0d3_Cr4ck3d_It!}
